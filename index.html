@@ -1,67 +1,56 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer 6 Hari</title>
-    <!-- CSS -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-            background-image: url("https://i.pinimg.com/1200x/a1/9e/90/a19e90bb1f67dd8eb9a34bab7034c232.jpg");
-        }
-        #timer {
-            font-size: 2em;
-            color: #333;
-            margin: 20px;
-        }
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 20px;
-            background: rgb(84, 27, 93);
-            border-radius: 15px;
-            box-shadow:  0 0 10px #5d0b6d;
-        }
-        
-    </style>
+    <title>InfoHub | Portal Informasi Terpercaya</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- HTML -->
-    <div class="container">
-        <h1>Countdown Timer 6 Hari</h1>
-        <div id="timer">Loading...</div>
-    </div>
 
-    <!-- JavaScript -->
-    <script>
-        // Hitung tanggal target: sekarang + 6 hari
-        const now = new Date();
-        const targetDate = new Date(now.getTime() + (6 * 24 * 60 * 60 * 1000)); // Tambah 6 hari dalam milidetik
+    <header>
+        <nav class="navbar">
+            <div class="logo">Info<span>Hub</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#news">Berita</a></li>
+                <li><button id="theme-toggle">Ganti Mode</button></li>
+            </ul>
+        </nav>
+    </header>
 
-        function updateTimer() {
-            const currentTime = new Date();
-            const timeLeft = targetDate - currentTime;
+    <section id="home" class="hero">
+        <h1>Wawasan Luas dalam Satu Klik</h1>
+        <p>Temukan informasi terkini mengenai teknologi, kesehatan, dan gaya hidup.</p>
+        <a href="#news" class="btn-primary">Pelajari Lebih Lanjut</a>
+    </section>
 
-            if (timeLeft <= 0) {
-                document.getElementById('timer').innerHTML = 'Waktu Habis!';
-                return;
-            }
+    <main id="news" class="container">
+        <h2>Informasi Terbaru</h2>
+        <div class="card-grid">
+            <article class="card">
+                <h3>Inovasi AI 2026</h3>
+                <p>Bagaimana kecerdasan buatan mengubah cara kita bekerja di tahun ini...</p>
+                <span class="tag">Teknologi</span>
+            </article>
+            <article class="card">
+                <h3>Tips Hidup Sehat</h3>
+                <p>Menjaga kebugaran di tengah kesibukan pekerjaan remote...</p>
+                <span class="tag">Kesehatan</span>
+            </article>
+            <article class="card">
+                <h3>Ekonomi Digital</h3>
+                <p>Prediksi pasar kripto dan investasi digital masa depan...</p>
+                <span class="tag">Keuangan</span>
+            </article>
+        </div>
+    </main>
 
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    <footer>
+        <p>&copy; 2026 InfoHub. Dibuat dengan dedikasi.</p>
+    </footer>
 
-            document.getElementById('timer').innerHTML = 
-                `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
-        }
-
-        // Update setiap detik
-        setInterval(updateTimer, 1000);
-        updateTimer(); // Jalankan sekali saat load
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
