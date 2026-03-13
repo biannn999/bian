@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galaxy Background</title>
+    <title>Latar Belakang Galaksi</title>
     <style>
-        /* Reset and basic setup */
+        /* Reset dan pengaturan dasar */
         * {
             margin: 0;
             padding: 0;
-            box-sizing: borde-box;
+            box-sizing: border-box;
         }
 
         body {
@@ -24,7 +24,7 @@
             position: relative;
         }
 
-        /* The Galaxy Background Layer */
+        /* Latar Belakang Galaksi */
         .galaxy-bg {
             position: absolute;
             top: 0;
@@ -32,95 +32,226 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            
-            /* Create the deep space gradient */
-            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            background: 
+                radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 50%, #000 100%),
+                radial-gradient(ellipse at top, #0c0f1a 0%, transparent 50%);
             overflow: hidden;
         }
 
-        /* The Stars */
+        /* Bintang-bintang */
         .stars {
+            position: absolute;
             width: 1px;
             height: 1px;
             background: transparent;
-            box-shadow: 1744px 122px #FFF , 134px 1321px #FFF , 92px 859px #FFF , 1829px 1021px #FFF , 123px 45px #FFF , 1500px 1500px #FFF;
-            animation: animStar 50s linear infinite;
+            box-shadow: 
+                1744px 122px #FFF, 134px 1321px #FFF, 92px 859px #FFF, 
+                1829px 1021px #FFF, 123px 45px #FFF, 1500px 1500px #FFF,
+                200px 300px #FFF, 800px 600px #FFF, 1200px 900px #FFF,
+                400px 1100px #FFF, 1600px 400px #FFF, 300px 1400px #FFF,
+                900px 200px #FFF, 1400px 800px #FFF, 500px 1200px #FFF;
+            animation: animStar 70s linear infinite;
+            top: 0;
+            left: 0;
         }
 
-        /* Double the stars for more density */
         .stars2 {
+            position: absolute;
             width: 2px;
             height: 2px;
             background: transparent;
-            box-shadow: 1744px 122px #FFF , 134px 1321px #FFF , 92px 859px #FFF , 1829px 1021px #FFF , 123px 45px #FFF , 1500px 1500px #FFF;
-            animation: animStar 100s linear infinite;
+            box-shadow: 
+                1744px 122px #FFF, 134px 1321px #FFF, 92px 859px #FFF, 
+                1829px 1021px #FFF, 123px 45px #FFF, 1500px 1500px #FFF;
+            animation: animStar 120s linear infinite reverse;
+            top: 0;
+            left: 0;
         }
 
-        /* The Nebula/Glow effect */
+        /* Efek Nebula */
         .nebula {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(138, 43, 226, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
             filter: blur(40px);
             animation: pulse 8s ease-in-out infinite alternate;
         }
 
-        /* Content Card Styling */
-        .content {
+        .nebula1 { top: 30%; left: 20%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(138, 43, 226, 0.3) 0%, rgba(0, 0, 0, 0) 70%); animation-delay: 0s; }
+        .nebula2 { top: 60%; right: 20%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(30, 144, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%); animation-delay: -2s; }
+        .nebula3 { top: 70%; left: 50%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 20, 147, 0.25) 0%, rgba(0, 0, 0, 0) 70%); animation-delay: -4s; }
+
+        /* KARTU PROFIL - GANTI DARI CONTENT BIAS */
+        .profile-card {
             position: relative;
-            z-index: 10; /* Sits on top of the galaxy */
+            z-index: 10;
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(20px);
             padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            /* BORDER PROFIL YANG MENGKILAP */
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            /* Efek border gradient bercahaya */
+            box-shadow: 
+                0 0 0 2px rgba(138, 43, 226, 0.5),
+                0 15px 35px rgba(0,0,0,0.5),
+                0 0 30px rgba(138, 43, 226, 0.4),
+                inset 0 0 20px rgba(255,255,255,0.1);
+            max-width: 450px;
             text-align: center;
-            color: white;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            max-width: 400px;
+            transition: all 0.4s ease;
+            overflow: hidden;
         }
 
-        .content h1 {
+        /* Efek glow pada hover */
+        .profile-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 0 0 3px rgba(138, 43, 226, 0.8),
+                0 25px 50px rgba(0,0,0,0.7),
+                0 0 50px rgba(138, 43, 226, 0.6);
+            border-image: linear-gradient(45deg, #8A2BE2, #00BFFF, #FF1493) 1;
+        }
+
+        /* Foto Profil */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #8A2BE2, #00BFFF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.6);
+            animation: float 3s ease-in-out infinite;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+            
+        }
+        .profile-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(138, 43, 226, 1);
+        }
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Image pas tanpa distorsi */
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.4);
+        }
+
+
+        /* Nama Profil */
+        .profile-name {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            text-shadow: 0 0 20px rgba(255,255,255,0.8);
+            background: linear-gradient(45deg, #fff, #ddd, #8A2BE2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .content p {
-            font-size: 1.1rem;
+        /* Deskripsi Profil */
+        .profile-desc {
+            font-size: 1.2rem;
             color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
-        /* Animations */
+        /* Skills/Tag Profil */
+        .profile-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: rgba(138, 43, 226, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+        }
+
+        /* Animasi */
         @keyframes animStar {
-            from { transform: translateY(0px); }
-            to { transform: translateY(-2000px); }
+            from { transform: translateY(0px) rotate(0deg); }
+            to { transform: translateY(-2000px) rotate(360deg); }
         }
 
         @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+            0% { transform: scale(1); opacity: 0.4; }
+            100% { transform: scale(1.3); opacity: 0.7; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            box-shadow: 0 0 10px #fff;
+            top: 20%;
+            left: 10%;
+            animation: shoot 3s linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes shoot {
+            0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 1; }
+            100% { transform: translateX(120vw) translateY(120vh) rotate(45deg); opacity: 0; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Background Elements -->
+    <!-- Elemen Latar Belakang -->
     <div class="galaxy-bg">
         <div class="stars"></div>
         <div class="stars2"></div>
-        <div class="nebula"></div>
+        <div class="nebula nebula1"></div>
+        <div class="nebula nebula2"></div>
+        <div class="nebula nebula3"></div>
+        <div class="shooting-star"></div>
     </div>
 
-    <!-- Foreground Content -->
-    <div class="content">
-        <h1>Deep Space</h1>
-        <p>Welcome to the galaxy. This background is created entirely with CSS gradients and box-shadows.</p>
+    <!-- KARTU PROFIL -->
+    <div class="profile-card">
+        <div class="profile-img">
+            <img src="https://i.pinimg.com/736x/74/17/8b/74178bb61c781a7c3087600cec2a269a.jpg" alt="Black_Cat">
+        </div>
+        <h1 class="profile-name">Black_Cat</h1>
+        <p class="profile-desc">
+            Web gabut<br>
+            <small>Nyari referensiiii!!!!.</small>
+        </p>
+        <div class="profile-tags">
+            <span class="tag">Rebahan</span>
+            <span class="tag">Molor</span>
+            <span class="tag">Makan</span>
+            <span class="tag">Mandi</span>
+            <span class="tag">Main hp</span>
+        </div>
     </div>
-
 </body>
 </html>
