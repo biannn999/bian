@@ -1,4 +1,4 @@
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     // Mengambil semua elemen kotak ekskul
     const ekskulBoxes = document.querySelectorAll(".ekskul-box");
 
