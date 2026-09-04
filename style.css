@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Informasi Olahraga - DU Lido</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
 
+    <!-- Tombol Login Mengambang di Pojok Kiri Atas -->
+    <a href="index.html" class="btn-login-top" style="font-weight: 600;">⬅ Kembali ke Login</a>
+
+    <!-- Kontainer Utama Halaman -->
+    <div class="dashboard-container">
+        
+        <!-- Box Pengenalan Informasi Bagian Olahraga (Paling Atas) -->
+        <header class="intro-box">
+            <h1>Bagian Olahraga Pesantren Modern Daarul 'Uluum Lido</h1>
+            <p>Selamat datang di pusat informasi dan dokumentasi kegiatan olahraga santri. Kami berkomitmen membentuk generasi yang sehat, tangguh, dan berprestasi.</p>
+        </header>
+
+        <!-- Grid 6 Box Informasi Ekskul (Terbagi 3 Kiri, 3 Kanan) -->
+        <main class="ekskul-grid">
+            <!-- Box 1 -->
+            <div class="ekskul-box">
+                <img src="https://unsplash.com" alt="Sepak Bola / Futsal">
+                <div class="ekskul-info">
+                    <h3>Sepak Bola & Futsal</h3>
+                    <p>Melatih kerja sama tim, stamina, dan strategi permainan di lapangan hijau dan dalam ruangan.</p>
+                </div>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="ekskul-box">
+                <img src="https://unsplash.com" alt="Bola Basket">
+                <div class="ekskul-info">
+                    <h3>Bola Basket</h3>
+                    <p>Mengembangkan ketangkasan, akurasi tembakan, dan koordinasi fisik yang dinamis.</p>
+                </div>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="ekskul-box">
+                <img src="https://unsplash.com" alt="Bola Voli">
+                <div class="ekskul-info">
+                    <h3>Bola Voli</h3>
+                    <p>Fokus pada kekuatan pukulan smash, akurasi passing, dan kekompakan pertahanan tim.</p>
+                </div>
+            </div>
+
+            <!-- Box 4 -->
+            <div class="ekskul-box">
+                <img src="https://unsplash.com" alt="Bulutangkis">
+                <div class="ekskul-info">
+                    <h3>Bulutangkis</h3>
+                    <p>Melatih refleks cepat, kelincahan pergerakan kaki, dan penempatan kok yang akurat.</p>
+                </div>
+            </div>
+
+            <!-- Box 5 -->
+            <div class="ekskul-box">
+                <img src="https://unsplash.com" alt="Pencak Silat">
+                <div class="ekskul-info">
+                    <h3>Seni Bela Diri</h3>
+                    <p>Penyaluran bakat melalui Pencak Silat untuk melatih mental, disiplin, dan pertahanan diri.</p>
+                </div>
+            </div>
+
+            <!-- Box 6 -->
+            <div class="ekskul-box">
+                <img src="https://unsplash.com" alt="Tenis Meja">
+                <div class="ekskul-info">
+                    <h3>Tenis Meja</h3>
+                    <p>Mengasah konsentrasi tinggi, kecepatan reaksi, dan penguasaan teknik putaran bola.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bagian Paling Bawah: Teks Penjelasan Aturan Pelatih tanpa Box -->
+        <footer class="rules-section">
+            <h2>Pedoman & Aturan Penting bagi Pelatih Olahraga</h2>
+            <p>1. Setiap pelatih wajib hadir di lapangan 10 menit sebelum jadwal latihan ekstrakurikuler dimulai.</p>
+            <p>2. Mengutamakan keselamatan santri dengan memimpin sesi pemanasan (*warming up*) secara menyeluruh.</p>
+            <p>3. Wajib menjaga nilai-nilai kesantunan, sportivitas, dan akhlakul karimah selama memimpin kegiatan olahraga.</p>
+            <p>4. Melaporkan absensi kehadiran santri dan perkembangan materi latihan kepada Bagian Pengasuhan/Olahraga setiap pekan.</p>
+            <p>5. Memastikan seluruh peralatan olahraga dikembalikan ke gudang inventaris dalam keadaan rapi dan bersih setelah selesai digunakan.</p>
+        </footer>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
+Gunakan kode dengan hati-hati.2. File CSS (dashboard.css)Buat file baru bernama dashboard.css. File ini menggunakan teknik manipulasi gradasi berukuran besar (background-size: 200%) dan menganimasikannya agar latar belakang menyerong tampak mengalir berlawanan arah secara terus-menerus. Kode ini juga menangani urutan jeda animasi box (stagger).css/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 30px 20px;
+    position: relative;
+    overflow-x: hidden;
+    
+    /* Background Vektor Gelombang Besar Menyerong Ke Kanan Atas */
+    background: linear-gradient(135deg, 
+        #1d4ed8 0%,  /* Biru Tua */
+        #3b82f6 25%, /* Biru Biasa */
+        #ffffff 50%, /* Putih */
+        #60a5fa 75%, /* Biru Muda */
+        #1e40af 100% /* Biru Tua Kembali */
+    );
+    background-size: 400% 400%;
+    /* Animasi background berjalan pelan melawan arus gelombang */
+    animation: waveBackground 20s ease-in-out infinite alternate;
+}
+
+/* Animasi Background Bergerak Semu */
+@keyframes waveBackground {
+    0% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+/* Tombol Login Mengambang Pojok Kiri Atas */
+.btn-login-top {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    padding: 10px 20px;
+    background-color: #1e3a8a; /* Biru Tua Kontras */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-login-top:hover {
+    background-color: #172554;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 58, 138, 0.6);
+}
+
+/* Kontainer Utama Dashboard */
+.dashboard-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto 0 auto; /* Memberi ruang untuk tombol di atas */
+}
+
+/* Box Pengenalan Informasi (Atas) */
+.intro-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    text-align: center;
+    
+    /* Animasi melayang tetap yang pelan agar web terlihat hidup */
+    animation: floatIntro 6s ease-in-out infinite;
+}
+
+@keyframes floatIntro {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.intro-box h1 {
+    color: #1e3a8a;
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.intro-box p {
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Grid Susunan Ekskul 3 Kiri dan 3 Kanan */
+.ekskul-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Membagi 2 kolom sejajar */
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* Base Style Box Ekskul */
+.ekskul-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex; /* Menyampingkan gambar dan info deskripsi */
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    height: 140px;
+    
+    /* Pengaturan awal transparan sebelum dipicu oleh JavaScript */
+    opacity: 0;
+    transform: translateX(100px); 
+}
+
+/* Class pemicu animasi slide-in dari kanan yang dijalankan via JS */
+.ekskul-box.show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+    
+    /* Setelah masuk selesai, sambung ke animasi mengambang/melayang pelan secara looping */
+    animation: floatEkskul 5s ease-in-out infinite;
+    animation-delay: 0.8s; /* Berjalan setelah transisi masuk beres */
+}
+
+@keyframes floatEkskul {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Pengaturan variasi ritme mengambang antar box agar terlihat natural (acak) */
+.ekskul-grid .ekskul-box:nth-child(even).show {
+    animation-duration: 5.5s;
+}
+
+.ekskul-box img {
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ekskul-info {
+    padding: 20px;
+    flex: 1;
+}
+
+.ekskul-info h3 {
+    color: #1e40af;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.ekskul-info p {
+    color: #576574;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Bagian Teks Aturan Pelatih Tanpa Box (Paling Bawah) */
+.rules-section {
+    padding: 30px 10px;
+    color: #1e293b; /* Teks gelap solid agar kontras di atas warna putih/biru muda background */
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6); /* Efek teks lembut bayangan putih agar terbaca jelas */
+}
+
+.rules-section h2 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(30, 58, 138, 0.2);
+    padding-bottom: 8px;
+}
+
+.rules-section p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Media Query untuk Responsivitas Layar HP/Gadget Kecil */
+@media (max-width: 850px) {
+    .ekskul-grid {
+        grid-template-columns: 1fr; /* Grid berubah jadi 1 kolom memanjang ke bawah */
+    }
+    
+    .ekskul-box {
+        height: auto;
+        flex-direction: column; /* Gambar pindah ke atas teks pada layar kecil */
+        text-align: center;
+    }
+    
+    .ekskul-box img {
+        width: 100%;
+        height: 160px;
+    }
+}
